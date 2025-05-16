@@ -72,7 +72,7 @@ class Regression(nn.Module):
     def __init__(self,datatype = "mesh"):
         super(Regression, self).__init__()
         self.Omega = h_regression()
-        self.lin = nn.Linear(1, 1)
+        self.lin =  nn.Sequential(nn.Linear(1, 1))
         if datatype == "mesh":
             self.varifold = mesh_varifold
         elif datatype == "graph":
